@@ -1,4 +1,4 @@
-<p style="color: green"><%= notice %></p>
+
 
 <h1>Friend list</h1>
 
@@ -14,18 +14,18 @@
     </tr>
   </thead>
   <tbody>
-  <% @friends.each do |friend| %>
-    <tr>
-      <td><%= friend.first_name%></td>
-      <td><%= friend.last_name %></td>
-      <td><%= friend.email %></td>
-      <td><%= friend.phone %></td>
-      <td><%= friend.twiter %></td>
-      <td><%= link_to "Show", friend %></td>
-      <td><%= link_to "Edit", friend %></td>
-      <td><%= link_to "Destroy", @friend, method: :delete %></td>
-    </tr>
-  <% end %>
+    <% @friends.each do |friend| %>
+      <tr>
+        <td><%= friend.last_name %></td>
+        <td><%= friend.first_name%></td>
+        <td><%= friend.email %></td>
+        <td><%= friend.phone %></td>
+        <td><%= friend.twiter %></td>
+        <td><%= link_to "Show", friend %></td>
+        <td><%= link_to "Edit", friend %></td>
+        <td><%= link_to "Destroy", friend, method: :delete %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 
