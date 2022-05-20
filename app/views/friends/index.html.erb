@@ -10,7 +10,7 @@
         <td>email</td>
         <td>phone</td>
         <td>twitter</td>
-        <td colspan="3" ></td>
+        <td></td>
       </tr>
     </thead>
     <tbody>
@@ -19,15 +19,12 @@
           <tr>
             <td><%= friend.user_id %></td>
             <td>
-              <%= friend.first_name %>
-              <%= friend.last_name%>
+              <%= link_to friend.first_name + ' ' + friend.last_name, friend %>
             </td>
             <td><%= friend.email %></td>
             <td><%= friend.phone %></td>
             <td><%= friend.twiter %></td>
-            <td><%= link_to "Show", friend %></td>
-            <td><%= link_to "Edit", friend %></td>
-            <td><%= link_to "Destroy", friend, method: :delete %></td>
+            <td><%= link_to "Delete", @friend, method: :delete, class:"btn btn-outline-danger btn-sm" %></td>
           </tr>
         <% end %>
       <% end %>
