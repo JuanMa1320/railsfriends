@@ -62,7 +62,6 @@ class FriendsController < ApplicationController
   def correct_user
     @friend = current_user.friends.find_by(id: params[:id])
       redirect_to friends_path, notice: "not autherized to edit this friend" if @friend.nil?
-    end
   end
 
   private
