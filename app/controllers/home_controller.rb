@@ -3,5 +3,7 @@ class HomeController < ApplicationController
   end
 
   def about
+    @message = 'tutor´s name is John Elder'
+    @suma = 30 + 1
   end
 end
