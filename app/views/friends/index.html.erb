@@ -16,17 +16,19 @@
   </thead>
   <tbody>
     <% @friends.each do |friend| %>
-      <tr>
-        <td><%= friend.user_id %></td>
-        <td><%= friend.first_name %></td>
-        <td><%= friend.last_name%></td>
-        <td><%= friend.email %></td>
-        <td><%= friend.phone %></td>
-        <td><%= friend.twiter %></td>
-        <td><%= link_to "Show", friend %></td>
-        <td><%= link_to "Edit", friend %></td>
-        <td><%= link_to "Destroy", friend, method: :delete %></td>
-      </tr>
+      <% if current_user == friend.user %>  
+        <tr>
+          <td><%= friend.user_id %></td>
+          <td><%= friend.first_name %></td>
+          <td><%= friend.last_name%></td>
+          <td><%= friend.email %></td>
+          <td><%= friend.phone %></td>
+          <td><%= friend.twiter %></td>
+          <td><%= link_to "Show", friend %></td>
+          <td><%= link_to "Edit", friend %></td>
+          <td><%= link_to "Destroy", friend, method: :delete %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
