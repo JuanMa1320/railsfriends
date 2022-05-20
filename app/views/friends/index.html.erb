@@ -6,8 +6,7 @@
     <thead class="table-dark">
       <tr>
       <td>User id</td>
-        <td>First name</td>
-        <td>last name</td>
+        <td>Name</td>
         <td>email</td>
         <td>phone</td>
         <td>twitter</td>
@@ -19,8 +18,10 @@
         <% if current_user == friend.user %>  
           <tr>
             <td><%= friend.user_id %></td>
-            <td><%= friend.first_name %></td>
-            <td><%= friend.last_name%></td>
+            <td>
+              <%= friend.first_name %>
+              <%= friend.last_name%>
+            </td>
             <td><%= friend.email %></td>
             <td><%= friend.phone %></td>
             <td><%= friend.twiter %></td>
