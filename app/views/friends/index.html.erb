@@ -1,11 +1,11 @@
 <% if user_signed_in? %>
 
   <h1>Friend list</h1>
+  <center><h3>User: <%= current_user.id %></h3></center>
 
   <table class="table table-striped table-bordered table-hover" id="friends">
     <thead class="table-dark">
       <tr>
-      <td>User id</td>
         <td>Name</td>
         <td>email</td>
         <td>phone</td>
@@ -17,14 +17,13 @@
       <% @friends.each do |friend| %>
         <% if current_user == friend.user %>  
           <tr>
-            <td><%= friend.user_id %></td>
             <td>
               <%= link_to friend.first_name + ' ' + friend.last_name, friend %>
             </td>
             <td><%= friend.email %></td>
             <td><%= friend.phone %></td>
             <td><%= friend.twiter %></td>
-            <td><%= link_to "Delete", @friend, method: :delete, class:"btn btn-outline-danger btn-sm" %></td>
+            <td><%= link_to "Delete", friend, method: :delete, class:"btn btn-outline-danger btn-sm" %></td>
           </tr>
         <% end %>
       <% end %>
